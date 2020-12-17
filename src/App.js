@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Menu from './Menu';
+import SizeButton from './components/SizeButton/SizeButton';
+import ColorButton from './components/ColorButton/ColorButton';
+import Note from './components/Note/Note';
+import "./index.css";
+import getMonthData from './components/Day/daysMethods';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return ( 
+   <div>
+      <div>
+      <Menu />
+      </div>
+       <div id='buttons'>
+      <Note />
+      <SizeButton />
+      <ColorButton />
+      <getMonthData />
+       </div>
+   </div>
+   );
 }
 
 export default App;

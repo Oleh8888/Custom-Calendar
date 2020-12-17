@@ -1,0 +1,49 @@
+ 
+  /* Change color Button style  */
+  .color-change {
+      -webkit-transition-duration: 0.1s; /* Safari */
+      transition-duration: 0.1s;
+      background-color: #F4595B;
+  
+      border-radius: 8px;
+      border-bottom: 4px solid #C24648;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-family: 'Oxygen', sans-serif;
+      letter-spacing: 2px;
+  }
+  
+  .color-change:hover {
+    background-color: green;
+    border: none;
+    border-radius: 8px;
+    border-bottom: 4px solid green;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Oxygen', sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  .color-change:active {
+    background-color: green;
+    border: none;
+    border-radius: 8px;
+    border-bottom: 4px solid green;
+    color: #CCC;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Oxygen', sans-serif;
+    letter-spacing: 2px;
+  }
+  
