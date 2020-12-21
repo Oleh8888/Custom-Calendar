@@ -13,7 +13,6 @@ import './years.css';
     <button className='years' key={year} onClick={ () => {
       setOpenMonth(true) 
       setChosen(index)
-      
     }}>
       {year}
     </button>

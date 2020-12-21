@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import Years from './components/Years/Years';
 import Note from './components/Note/Note';
-import Day from './components/Day/Day';
+import Days from './components/Day/Days';
 
 
 export default function Menu() {
@@ -11,7 +11,7 @@ export default function Menu() {
     const [openMonth, setOpenMonth] = useState(false);
     const [chose, setChosen] = useState(1);
     const [openDay, setOpenDay] = useState(false);
-    
+    const [openNote, setOpenNote] = useState(false);
 
     
   return (
@@ -21,6 +21,7 @@ export default function Menu() {
           <button onClick={ () => {
             setOpenMonth(false);
             setOpenDay(true)
+            setOpenNote(true)
           }}>
           {monthes.map((month) => (
             <div key={month} className='monthes' >
@@ -30,24 +31,11 @@ export default function Menu() {
           )}
           </button>    
       )}
-      <Days setOpenDay={setOpenDay} openDay={openDay}/> 
+      <Days setOpenDay={setOpenDay} openDay={openDay} setOpenNote={setOpenNote} openNote={openNote}/> 
+      <button> 
+         <Note /> 
+      </button>
     </div>
   );
 }
  
-function Days (props) {
-  
-  const { setOpenDay, openDay } = props; 
-  
-  return (
-    <button>
-  {openDay &&(
-    <button onClick={ () => {
-      setOpenDay(false);
-    }}>
-    <Day/>
-    </button>  
-  )}
-  </button>
-  );
-}

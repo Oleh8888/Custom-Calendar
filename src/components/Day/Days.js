@@ -3,7 +3,8 @@ import classnames from 'classnames';
 import * as daysMethods from './daysMethods';
 import './day.css';
 
-export default class Day extends React.Component {
+
+ class Day extends React.Component {
     static defaultProps = {
         date: new Date(),
         //  years: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
@@ -113,3 +114,23 @@ export default class Day extends React.Component {
         );
     }
 }
+
+
+export default function Days (props) {
+  
+    const { setOpenDay, openDay, setOpenNote} = props; 
+    
+    return (
+      <button>
+    {openDay &&(
+      <button onClick={ () => {
+        setOpenDay(false);
+        setOpenNote(false)
+      }}>
+      <Day/>
+      </button>  
+    )}
+    
+    </button>
+    );
+  }
