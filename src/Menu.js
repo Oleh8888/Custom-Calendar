@@ -3,6 +3,7 @@ import {useState} from 'react';
 import Years from './components/Years/Years';
 import Note from './components/Note/Note';
 import Days from './components/Day/Days';
+import ColorButton from './components/ColorButton/ColorButton';
 
 
 export default function Menu() {
@@ -12,19 +13,24 @@ export default function Menu() {
     const [chose, setChosen] = useState(1);
     const [openDay, setOpenDay] = useState(false);
     const [openNote, setOpenNote] = useState(false);
-
+    const [monthColor, setMonthesColor] = useState('');
+    const [yearColor, setYearsColor] = useState('');
     
   return (
-        <div >
-      <Years setChosen={setChosen} setOpenMonth={setOpenMonth} setopenDay={setOpenDay}/>
+        <>
+      <Years setChosen={setChosen} setOpenMonth={setOpenMonth} setopenDay={setOpenDay} yearColor={yearColor}/>
       {openMonth &&(
-          <button onClick={ () => {
+          <button  onClick={ () => {
             setOpenMonth(false);
             setOpenDay(true)
             setOpenNote(true)
           }}>
           {monthes.map((month) => (
-            <div key={month} className='monthes' >
+            <div key={month} className='monthes' 
+            style={{
+              backgroundColor: monthColor,
+              borderBottom: monthColor
+              }}>
             {month[chose]}
             </div> 
           )
@@ -32,10 +38,9 @@ export default function Menu() {
           </button>    
       )}
       <Days setOpenDay={setOpenDay} openDay={openDay} setOpenNote={setOpenNote} openNote={openNote}/> 
-      <button> 
          <Note /> 
-      </button>
-    </div>
+      <ColorButton monthColor={monthColor} setMonthesColor={setMonthesColor} yearColor={yearColor} setYearsColor={setYearsColor}/>
+    </>
   );
 }
  

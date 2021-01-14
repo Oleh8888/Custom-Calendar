@@ -5,9 +5,9 @@ import React, { useState } from 'react';
 import './note.css';
 
 export default function Note(props){
-    const [newText, setNewText] = useState({});
     const { openNote, setOpenNote } = props;
     
+    const [newText, setNewText] = useState({});
     const handleChange = ({target}) => {
         const { name, value } = target;
         setNewText(prev => ({ 
@@ -17,17 +17,6 @@ export default function Note(props){
         })
         );
     };
-
-    // const changeColor = (counter, colors) => {
-    //     counter++;
-    //     if(counter===colors.length){
-    //         counter = 0;
-    //     }
-    //     const newColor = this.state.color === colors[counter] ? colors[counter] : colors[counter];
-    //     this.setState({
-    //         color: newColor
-    //     });
-    // }
 
     const [allText, setAllText] = useState([]);
     const handleSubmit = (event) => {

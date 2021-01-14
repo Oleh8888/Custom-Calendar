@@ -1,7 +1,9 @@
 import React from "react";
 import './note.css';
 
-export default function NewNote({ newText, handleChange, handleSubmit }) {
+export default function NewNote(props) {
+ const { newText, handleChange, handleSubmit } = props
+
   return (
     <form onSubmit={handleSubmit}>
       <input

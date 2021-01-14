@@ -5,16 +5,22 @@ const colors = ['#39D1B4','#FFD712', '#0000FF', '#66BB55', '#666'];
 let counter = 0;
 
 
- class ColorButton extends React.Component{
+ export default class ColorButton extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             color: colors[counter]
         };
-        this.changeColor =this.changeColor.bind(this);
+        this.changeColor = this.changeColor.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
     changeColor
     
+    handleChange(e) {
+        const color = e.target.value;
+        this.props.onChange(color);
+    }
+
      changeColor = () => {
         counter++;
         if(counter===colors.length){
@@ -37,8 +43,3 @@ let counter = 0;
     }
 }
 
-export default function ColorButtons() {
-    return (
-        <ColorButton />
-    );
-}
